@@ -51,6 +51,7 @@ Este script puede ser útil cuando desees encontrar rápidamente las respuestas 
 
 ## [!] Atención
 ======
+
 ***Este script se proporciona con fines educativos y su uso debe cumplir con los términos de servicio de Kahoot y las leyes y regulaciones aplicables. Sé respetuoso y úsalo de manera responsable.***
 
 ***Aviso Legal: Este script no está afiliado de ninguna manera con Kahoot y es un proyecto independiente con fines educativos.***
