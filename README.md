@@ -3,7 +3,7 @@
 <h1 align="center">RIP KAHOOT</h1>
 
 <p align="center">
-<img src="images/ripkahoot.png"
+<img src="ripkahoot.jpg"
 	alt="RIP Kahoot logo"
 	width="200"
 	style="float: left; margin-right: 10px;" />
