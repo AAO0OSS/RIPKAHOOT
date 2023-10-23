@@ -1,33 +1,20 @@
+import os
 import urllib.request
 import json
 import colorama
-import pyautogui
-import pyautogui
-pyautogui.FAILSAFE = False
-import keyboard
 
-def get_coordinates(color):
-    # Define coordinates for different answer colors
-    if color == colorama.Fore.RED:  # Red
-        return 300, 300
-    elif color == colorama.Fore.BLUE:  # Blue
-        return 1500, 300
-    elif color == colorama.Fore.YELLOW:  # Yellow
-        return 300, 900
-    elif color == colorama.Fore.GREEN:  # Green
-        return 1500, 900
-    else:
-        return 0, 0  # Default coordinates when color is not found
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def conseguir_respuesta(id):
     url = f"https://play.kahoot.it/rest/kahoots/{id}"
     lista_colores = {
-        "rojo": colorama.Fore.RED,
-        "azul": colorama.Fore.BLUE,
-        "amarillo": colorama.Fore.YELLOW,
-        "verde": colorama.Fore.GREEN
+        "red": colorama.Fore.RED,
+        "blue": colorama.Fore.BLUE,
+        "yellow": colorama.Fore.YELLOW,
+        "green": colorama.Fore.GREEN
     }
-    default_color = colorama.Fore.WHITE  # Default color if answer color is not found
+    default_color = colorama.Fore.WHITE 
     colores_correctos = []
 
     try:
@@ -45,19 +32,11 @@ def conseguir_respuesta(id):
                             color = lista_colores.get(answer, default_color)
                             colores_correctos.append((color, answer))
                             print(f"{color}")
-                            print(f"{index+1}: {answer}")
+                            print(f"{index + 1}: {answer}")
                             print()
 
                 if colores_correctos:
-                    print("Presiona la tecla shift para auto responder cuando esté preparado")
-
-                    keyboard.wait('shift')
-
-                    for lugar_color, _ in colores_correctos:
-                        x, y = get_coordinates(lugar_color)
-                        pyautogui.moveTo(x, y, duration=1)  # Move to absolute coordinates (x, y) over a 1-second duration
-                        pyautogui.click(x, y)
-
+                    print("Se encontraron respuestas correctas.")
                 else:
                     print("No se encontraron respuestas correctas.")
 
@@ -70,10 +49,47 @@ def conseguir_respuesta(id):
         print(f"Error: {e}")
 
 if __name__ == "__main__":
+    clear_screen()
     colorama.init()
 
+    def display_banner():
+        banner = """
+         ____   ________     __ __ ___    __  ______  ____ ______
+        / __ \ /  _/ __ \   / //_//   |  / / / / __ \/ __ |_  __/
+        / /_/ / / // /_/ /  / ,<  / /| | / /_/ / / / / / / // /   
+        / _, _/_/ // ____/  / /| |/ ___ |/ __  / /_/ / /_/ // /    
+        /_/ |_|/___/_/      /_/ |_/_/  |_/_/ /_/\____/\____//_/
+             
+                         :^~!~~^^^::.
+                       ^~^:.....:^^.^^
+                      .!          :^ ~:
+                      .!          .~ :^
+                      .~   Rip    .! .~
+                       !           ! .!
+                       !  KAHOOT   !  !
+                       !.          !  ~.
+                       ~.          !. ~:
+                   ::::^^:::::.... !. !:
+                . ^~.      ....:::!^:^~
+             :^^:.               :7 :~
+            ~:                  :~^^:
+         .^^:                .:~^^:
+       .^^.               .^^^^~:
+       .: . .            .^.:^:
+         :::^^::::.:...   .^:
+                   ....::^^
+
+	https://kahoot.it/v2/?quizId="EL ID QUE HAY QUE PONER"
+	
+		EL KAHOOT DEBE SER PÚBLICO
+        """
+        print(colorama.Fore.RED + banner)
+        print(colorama.Fore.WHITE)
+
+    display_banner()
+
     while True:
-        uuid = input(colorama.Fore.WHITE + "Enter uuid (or 'exit' to quit):")
+        uuid = input(colorama.Fore.WHITE + "Pon la id del kahoot ('exit' para salir):")
         if uuid.lower() == 'exit':
             break
         conseguir_respuesta(uuid)
