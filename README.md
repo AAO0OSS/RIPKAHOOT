@@ -11,7 +11,7 @@
 
 ### [*] ENCUENTRA LAS RESPUESTAS DE KAHOOTS DE MANERA AUTOMATICA!
 
-Este script de Python está diseñado para encontrar las respuestas correctas en quizzes públicos de Kahoot y mostrarlas con códigos de colores. Utiliza la API de Kahoot para obtener información del quiz y luego extrae las respuestas correctas de la respuesta JSON. El script aprovecha la biblioteca colorama para mostrar las respuestas en diferentes colores.
+Este script de Python está diseñado para encontrar las respuestas correctas en quizzes públicos de Kahoot y mostrarlas con códigos de colores. Utiliza la API de Kahoot para obtener información del quiz y luego extrae las respuestas correctas de la respuesta JSON.
 
 ### Requisitos Previos:
 
@@ -47,7 +47,7 @@ El script recuperará los datos del quiz, identificará las respuestas correctas
 
 ======
 
-Este script puede ser útil cuando desees encontrar rápidamente las respuestas correctas en un quiz de Kahoot. Puede ahorrarte tiempo y esfuerzo al participar o dirigir un juego de Kahoot. Sin embargo, es importante utilizar este script de manera responsable y solo en quizzes de Kahoot públicos. El uso indebido de este script en quizzes no autorizados no es ético. (Haz lo que te quieras)
+Este script puede ser útil cuando desees encontrar rápidamente las respuestas correctas en un quiz de Kahoot. Puede ahorrarte tiempo y esfuerzo al participar o dirigir un juego de Kahoot. Sin embargo, es importante utilizar este script de manera responsable y solo en quizzes de Kahoot públicos. El uso indebido de este script en quizzes no autorizados no es ético.
 
 ## [!] Atención
 ======
