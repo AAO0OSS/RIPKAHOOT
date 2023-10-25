@@ -8,13 +8,8 @@ def clear_screen():
 
 def conseguir_respuesta(id):
     url = f"https://play.kahoot.it/rest/kahoots/{id}"
-    lista_colores = {
-        "red": colorama.Fore.RED,
-        "blue": colorama.Fore.BLUE,
-        "yellow": colorama.Fore.YELLOW,
-        "green": colorama.Fore.GREEN
-    }
-    default_color = colorama.Fore.WHITE 
+    lista_colores = [colorama.Fore.RED, colorama.Fore.BLUE, colorama.Fore.YELLOW, colorama.Fore.GREEN]
+
     colores_correctos = []
 
     try:
@@ -28,10 +23,10 @@ def conseguir_respuesta(id):
                 for index, slide in enumerate(preguntas):
                     for i, choice in enumerate(slide.get("choices", [])):
                         if choice.get("correct", False):
-                            answer = choice.get('answer')
-                            color = lista_colores.get(answer, default_color)
+                            answer = choice['answer']
+                            color = lista_colores[i]
                             colores_correctos.append((color, answer))
-                            print(f"{color}")
+                            print(color)
                             print(f"{index + 1}: {answer}")
                             print()
 
@@ -56,10 +51,10 @@ if __name__ == "__main__":
         banner = """
          ____   ________     __ __ ___    __  ______  ____ ______
         / __ \ /  _/ __ \   / //_//   |  / / / / __ \/ __ |_  __/
-        / /_/ / / // /_/ /  / ,<  / /| | / /_/ / / / / / / // /   
-        / _, _/_/ // ____/  / /| |/ ___ |/ __  / /_/ / /_/ // /    
+        / /_/ / / // /_/ /  / ,<  / /| | / /_/ / / / / / / // /
+        / _, _/_/ // ____/  / /| |/ ___ |/ __  / /_/ / /_/ // /
         /_/ |_|/___/_/      /_/ |_/_/  |_/_/ /_/\____/\____//_/
-             
+
                          :^~!~~^^^::.
                        ^~^:.....:^^.^^
                       .!          :^ ~:
@@ -80,9 +75,9 @@ if __name__ == "__main__":
          :::^^::::.:...   .^:
                    ....::^^
 
-	https://kahoot.it/v2/?quizId="EL ID QUE HAY QUE PONER"
-	
-		EL KAHOOT DEBE SER PÚBLICO
+        https://kahoot.it/v2/?quizId="EL ID QUE HAY QUE PONER"
+
+                EL KAHOOT DEBE SER PÚBLICO
         """
         print(colorama.Fore.RED + banner)
         print(colorama.Fore.WHITE)
